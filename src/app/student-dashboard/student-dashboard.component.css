@@ -1,0 +1,79 @@
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #121212;
+  color: white;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: all 0.3s;
+}
+
+#sidebar .nav-link {
+  color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px 15px;
+  transition: background 0.3s, color 0.3s;
+}
+
+#sidebar .nav-link:hover,
+#sidebar .nav-link.active {
+  background-color: #f39c12;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Main content area */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  background-color: #ded9d9;
+  min-height: 100vh;
+}
+
+/* Cards */
+.dashboard-card {
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+  color: white;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+}
+
+/* List Items */
+.list-group-item {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: none;
+  margin-bottom: 5px;
+}
+
+.list-group-item:hover {
+  background-color: #f39c12;
+  color: #c1b9b9;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 992px) {
+  #sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
