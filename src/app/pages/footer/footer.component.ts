@@ -1,17 +1,17 @@
 import { Component } from "@angular/core"
 import { CommonModule } from "@angular/common"
- 
+
 interface FooterLink {
   label: string
   href: string
 }
- 
+
 interface SocialIcon {
   name: string
   icon: string
   url: string
 }
- 
+
 @Component({
   selector: "app-footer",
   standalone: true,
@@ -25,7 +25,7 @@ export class FooterComponent {
     address: "25/B Milford Road, New York",
     email: "info@example.com",
   }
- 
+
   leftLinks: FooterLink[] = [
     { label: "About Us", href: "#" },
     { label: "FAQs", href: "#" },
@@ -34,7 +34,7 @@ export class FooterComponent {
     { label: "Privacy policy", href: "#" },
     { label: "Update News", href: "#" },
   ]
- 
+
   rightLinks: FooterLink[] = [
     { label: "Campus Safety", href: "#" },
     { label: "Student Activities", href: "#" },
@@ -43,7 +43,7 @@ export class FooterComponent {
     { label: "Office Of The Chancellor", href: "#" },
     { label: "Facility Services", href: "#" },
   ]
- 
+
   socialIcons: SocialIcon[] = [
     { name: "Facebook", icon: "facebook", url: "#" },
     { name: "LinkedIn", icon: "linkedin", url: "#" },
@@ -51,7 +51,7 @@ export class FooterComponent {
     { name: "YouTube", icon: "youtube", url: "#" },
     { name: "Dribbble", icon: "dribbble", url: "#" },
   ]
- 
+
   onSubscribe(email: string): void {
     if (email) {
       console.log("Subscribed with email:", email)
