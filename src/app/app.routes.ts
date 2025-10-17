@@ -42,6 +42,8 @@ export const routes: Routes = [
       { path: 'reports', component: ReportComponent },
     ],
   },
+
+
   { path: 'dashboard/teacher', component: OurTeacherComponent },
   { path: 'dashboard/parent', component: ParentDashboardComponent },
 
