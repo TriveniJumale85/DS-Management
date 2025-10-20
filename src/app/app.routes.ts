@@ -1,23 +1,39 @@
 import { Routes } from '@angular/router';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-
 import { OurTeacherComponent } from './pages/our-teacher/our-teacher.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { StudentComponent } from './dashboard/admin-dashboard/student/student.component';
+import { AttendanceComponent } from './dashboard/admin-dashboard/attendance/attendance.component';
+import { AssignmentComponent } from './dashboard/admin-dashboard/assignment/assignment.component';
+import { MessageComponent } from './dashboard/admin-dashboard/message/message.component';
+import { ReportComponent } from './dashboard/admin-dashboard/report/report.component';
 import { StudentDashboardComponent } from './dashboard/student-dashboard/student-dashboard.component';
 import { ChatboatComponent } from './pages/chatboat/chatboat.component';
 import { FooterComponent } from './pages/footer/footer.component';
-import { MyCourseComponent } from './pages/student-my-course/my-course.component';
-import { AdminAssignmentComponent } from './pages/admin-assignment/admin-assignment.component';
-import { AdminAttendanceComponent } from './pages/admin-attendance/admin-attendance.component';
-import { AdminCoursesComponent } from './pages/admin-courses/admin-courses.component';
-import { AdminReportComponent } from './pages/admin-report/admin-report.component';
-import { AdminStudentComponent } from './pages/admin-student/admin-student.component';
-import { StudentAccessbookComponent } from './pages/student-accessbook/student-accessbook.component';
-import { StudentAttendLiveclassesComponent } from './pages/student-attend-liveclasses/student-attend-liveclasses.component';
-import { StudentAttendanceComponent } from './pages/student-attendance/student-attendance.component';
-import { StudentGradesComponent } from './pages/student-grades/student-grades.component';
+
+
+import { ProgramsComponent } from './pages/programs/programs.component';
+import { SyllabusComponent } from './pages/syllabus/syllabus.component';
+
+import { AdminHomeComponent } from './dashboard/admin-dashboard/admin-home/admin-home.component';
+import { CoursesComponent } from './dashboard/admin-dashboard/courses/courses.component';
+import { ParentDashboardComponent } from './dashboard/parent-dashboard/parent-dashboard.component';
+import { StudentHomeComponent } from './dashboard/student-dashboard/student-home/student-home.component';
+import { StudentAccessbookComponent } from './dashboard/student-dashboard/student-accessbook/student-accessbook.component';
+import { StudentAttendanceComponent } from './dashboard/student-dashboard/student-attendance/student-attendance.component';
+import { StudentGradesComponent } from './dashboard/student-dashboard/student-grades/student-grades.component';
+import { StudentMyCourseComponent } from './dashboard/student-dashboard/student-my-course/student-my-course.component';
+import { StudentSttendLiveclassesComponent } from './dashboard/student-dashboard/student-sttend-liveclasses/student-sttend-liveclasses.component';
+import { StudentSubmitassignmentComponent } from './dashboard/student-dashboard/student-submitassignment/student-submitassignment.component';
+import { RegisterComponent } from './register/register.component';
+
+import { AttendenceComponent } from './dashboard/parent-dashboard/attendence/attendence.component';
+import { FeeRemindersComponent } from './dashboard/parent-dashboard/fee-reminders/fee-reminders.component';
+import { LearningProgressComponent } from './dashboard/parent-dashboard/learning-progress/learning-progress.component';
+import { SchoolCircularsComponent } from './dashboard/parent-dashboard/school-circulars/school-circulars.component';
+import { ParentHomeComponent } from './dashboard/parent-dashboard/parent-home/parent-home.component';
 
 export const routes: Routes = [
   // Home
@@ -25,30 +41,66 @@ export const routes: Routes = [
 
   // Login
   { path: 'login', component: LoginComponent },
+  { path: 'register', component:RegisterComponent },
+  
 
-  // Dashboard routes
-  { path: 'student_dashboard', component: StudentDashboardComponent },
-  { path: 'admin', component: AdminDashboardComponent },
+  {
+    path: 'admin',
+    component: AdminDashboardComponent,
+    children: [
+      { path: '', redirectTo: 'main-content', pathMatch: 'full' },
+      { path: 'main-content', component: AdminHomeComponent },
+      { path: 'course', component: CoursesComponent },
+      { path: 'students', component: StudentComponent },
+      { path: 'attendance', component: AttendanceComponent },
+      { path: 'assignments', component: AssignmentComponent },
+      { path: 'messages', component: MessageComponent },
+      { path: 'reports', component: ReportComponent },
+    ],
+  },
+ {
+    path: 'student',
+    component: StudentDashboardComponent,
+    children: [
+      { path: '', redirectTo: 'main-content-student', pathMatch: 'full' },
+      { path: 'main-content-student', component: StudentHomeComponent },
+      { path: 'accessbook', component: StudentAccessbookComponent },
+      { path: 'attendance', component: StudentAttendanceComponent },
+      { path: 'grades', component: StudentGradesComponent},
+      { path: 'my-course', component: StudentMyCourseComponent },
+      { path: 'liveclasses', component: StudentSttendLiveclassesComponent },
+      { path: 'assignment', component: StudentSubmitassignmentComponent },
+    ],
+  },
+{
+    path: 'parent',
+    component: ParentDashboardComponent,
+    children: [
+      { path: '', redirectTo: 'main-content-parent', pathMatch: 'full' },
+      { path: 'main-content-parent', component: ParentHomeComponent },
+      { path: 'attendence', component: AttendenceComponent },
+      { path: 'fee-reminders', component:FeeRemindersComponent },
+      { path: 'learning-progress', component: LearningProgressComponent},
+      { path: 'school-circulars', component: SchoolCircularsComponent},
+     
+    ],
+  },
   { path: 'dashboard/teacher', component: OurTeacherComponent },
+  { path: 'dashboard/parent', component: ParentDashboardComponent },
 
   // Pages
   { path: 'pages/chatboat', component: ChatboatComponent },
   { path: 'home/footer', component: FooterComponent },
   { path: 'home/navbar', component: NavbarComponent },
   { path: 'home/our_teacher', component: OurTeacherComponent },
-  { path: 'admin/assignment', component: AdminAssignmentComponent },
-  { path: 'admin/attendance', component: AdminAttendanceComponent },
-  { path: 'admin/courses', component: AdminCoursesComponent },
-  { path: 'admin/report', component: AdminReportComponent },
-  { path: 'admin/student', component: AdminStudentComponent},
-  { path: 'student/accessbook', component: StudentAccessbookComponent },
-  { path: 'student/attend-liveclasses', component: StudentAttendLiveclassesComponent },
-  { path: 'student/attendance', component: StudentAttendanceComponent },
-  { path: 'student/grades', component: StudentGradesComponent},
-  { path: 'student/submit-assignment', component: StudentAccessbookComponent },
-  { path: 'student/course', component: MyCourseComponent },
+ 
+  { path: 'footer', component: FooterComponent },
+  { path: 'navbar', component: NavbarComponent },
+  { path: 'our_teacher', component: OurTeacherComponent },
+  
+  { path: 'programs', component: ProgramsComponent},
+  { path: 'syllabus', component: SyllabusComponent},
+
   // Fallback route
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];
-
-

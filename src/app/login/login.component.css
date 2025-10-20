@@ -5,10 +5,17 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #343a40 0%,  #ffc107 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-container {
   width: 100%;
   max-width: 450px;
-  margin: auto;
 }
 
 .login-card {

@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-warning fw-bold mb-0">
+      <i class="bi bi-file-earmark-text me-2"></i>Assignments
+    </h2>
+    <button class="btn btn-warning text-dark fw-semibold">
+      <i class="bi bi-plus-circle me-2"></i>Create Assignment
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead class="table-warning">
+                <tr>
+                  <th class="fw-semibold">Title</th>
+                  <th class="fw-semibold">Course</th>
+                  <th class="fw-semibold">Teacher</th>
+                  <th class="fw-semibold">Due Date</th>
+                  <th class="fw-semibold">Status</th>
+                  <th class="fw-semibold">Submissions</th>
+                  <th class="fw-semibold text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let assignment of assignments">
+                  <td class="fw-medium">{{ assignment.title }}</td>
+                  <td>{{ assignment.course }}</td>
+                  <td>{{ assignment.teacher }}</td>
+                  <td>{{ assignment.dueDate }}</td>
+                  <td>
+                    <span class="badge" [ngClass]="getStatusClass(assignment.status)">
+                      {{ assignment.status }}
+                    </span>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <span class="me-2">{{ assignment.submissions }}/{{ assignment.totalStudents }}</span>
+                      <div class="progress flex-grow-1" style="height: 6px;">
+                        <div class="progress-bar bg-warning"
+                             [style.width.%]="getSubmissionPercentage(assignment.submissions, assignment.totalStudents)">
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-outline-primary me-2">
+                      <i class="bi bi-pencil"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
