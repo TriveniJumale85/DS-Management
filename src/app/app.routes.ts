@@ -1,16 +1,26 @@
 import { Routes } from '@angular/router';
 import { NavbarComponent } from './pages/navbar/navbar.component';
-
 import { OurTeacherComponent } from './pages/our-teacher/our-teacher.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { StudentComponent } from './dashboard/admin-dashboard/student/student.component';
+import { AttendanceComponent } from './dashboard/admin-dashboard/attendance/attendance.component';
+import { AssignmentComponent } from './dashboard/admin-dashboard/assignment/assignment.component';
+import { MessageComponent } from './dashboard/admin-dashboard/message/message.component';
+import { ReportComponent } from './dashboard/admin-dashboard/report/report.component';
 import { StudentDashboardComponent } from './dashboard/student-dashboard/student-dashboard.component';
 import { ChatboatComponent } from './pages/chatboat/chatboat.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { MyCourseComponent } from './pages/my-course/my-course.component';
+<<<<<<< HEAD
 import { ProgramsComponent } from './pages/programs/programs.component';
 import { SyllabusComponent } from './pages/syllabus/syllabus.component';
+=======
+import { AdminHomeComponent } from './dashboard/admin-dashboard/admin-home/admin-home.component';
+import { CoursesComponent } from './dashboard/admin-dashboard/courses/courses.component';
+import { ParentDashboardComponent } from './dashboard/parent-dashboard/parent-dashboard.component';
+>>>>>>> af93cf2d5b746e1de23aa62f7c32da1ad0f6ac95
 
 export const routes: Routes = [
   // Home
@@ -21,8 +31,26 @@ export const routes: Routes = [
 
   // Dashboard routes
   { path: 'student_dashboard', component: StudentDashboardComponent },
-  { path: 'admin', component: AdminDashboardComponent },
+
+
+  {
+    path: 'admin',
+    component: AdminDashboardComponent,
+    children: [
+      { path: '', redirectTo: 'main-content', pathMatch: 'full' },
+      { path: 'main-content', component: AdminHomeComponent },
+      { path: 'course', component: CoursesComponent },
+      { path: 'students', component: StudentComponent },
+      { path: 'attendance', component: AttendanceComponent },
+      { path: 'assignments', component: AssignmentComponent },
+      { path: 'messages', component: MessageComponent },
+      { path: 'reports', component: ReportComponent },
+    ],
+  },
+
+
   { path: 'dashboard/teacher', component: OurTeacherComponent },
+  { path: 'dashboard/parent', component: ParentDashboardComponent },
 
   // Pages
   { path: 'pages/chatboat', component: ChatboatComponent },
@@ -30,11 +58,12 @@ export const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'our_teacher', component: OurTeacherComponent },
   { path: 'course', component: MyCourseComponent },
+<<<<<<< HEAD
   { path: 'programs', component: ProgramsComponent},
   { path: 'syllabus', component: SyllabusComponent},
 
+=======
+>>>>>>> af93cf2d5b746e1de23aa62f7c32da1ad0f6ac95
   // Fallback route
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];
-
-
