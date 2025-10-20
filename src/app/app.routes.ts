@@ -9,6 +9,8 @@ import { StudentDashboardComponent } from './dashboard/student-dashboard/student
 import { ChatboatComponent } from './pages/chatboat/chatboat.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { MyCourseComponent } from './pages/my-course/my-course.component';
+import { ProgramsComponent } from './pages/programs/programs.component';
+import { SyllabusComponent } from './pages/syllabus/syllabus.component';
 
 export const routes: Routes = [
   // Home
@@ -28,6 +30,8 @@ export const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'our_teacher', component: OurTeacherComponent },
   { path: 'course', component: MyCourseComponent },
+  { path: 'programs', component: ProgramsComponent},
+  { path: 'syllabus', component: SyllabusComponent},
 
   // Fallback route
   { path: '**', redirectTo: '' }

@@ -3,11 +3,13 @@ import { NavbarComponent } from "../navbar/navbar.component";
 import { OurTeacherComponent } from "../our-teacher/our-teacher.component";
 import { FooterComponent } from "../footer/footer.component";
 import { ChatboatComponent } from "../chatboat/chatboat.component";
+import { ProgramsComponent } from "../programs/programs.component";
+import { SyllabusComponent } from "../syllabus/syllabus.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, OurTeacherComponent, FooterComponent, ChatboatComponent],
+  imports: [NavbarComponent, OurTeacherComponent, FooterComponent, ChatboatComponent, ProgramsComponent, SyllabusComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
