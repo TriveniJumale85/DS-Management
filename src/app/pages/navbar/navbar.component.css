@@ -129,4 +129,55 @@
   .carousel-caption p {
     font-size: 1rem;
   }
+  
+}
+/* --- Position cards to overlap bottom of slider --- */
+.features-section {
+  position: relative;
+  margin-top: -100px; /* Moves cards up over the slider */
+  z-index: 10;
+}
+
+.features-section .feature-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 1s ease both;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Hover effect with tilt and scale */
+.features-section .feature-card:hover {
+  transform: rotateX(8deg) rotateY(-8deg) scale(1.05);
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth reset when mouse leaves */
+.features-section .feature-card:active {
+  transform: rotateX(0deg) rotateY(0deg) scale(1);
+}
+
+/* Optional: subtle light reflection effect */
+.features-section .feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.features-section .feature-card:hover::before {
+  opacity: 1;
+}
+
+/* Keep icons floating */
+.features-section .icon {
+  animation: float 3s ease-in-out infinite;
 }
