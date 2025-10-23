@@ -34,6 +34,8 @@ import { FeeRemindersComponent } from './dashboard/parent-dashboard/fee-reminder
 import { LearningProgressComponent } from './dashboard/parent-dashboard/learning-progress/learning-progress.component';
 import { SchoolCircularsComponent } from './dashboard/parent-dashboard/school-circulars/school-circulars.component';
 import { ParentHomeComponent } from './dashboard/parent-dashboard/parent-home/parent-home.component';
+import { CourseManagementComponent } from './dashboard/admin-dashboard/course-management/course-management.component';
+import { SubjectManagementComponent } from './dashboard/admin-dashboard/subject-management/subject-management.component';
 
 export const routes: Routes = [
   // Home
@@ -50,12 +52,13 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'main-content', pathMatch: 'full' },
       { path: 'main-content', component: AdminHomeComponent },
-      { path: 'course', component: CoursesComponent },
+      { path: 'course-management', component: CourseManagementComponent },
       { path: 'students', component: StudentComponent },
       { path: 'attendance', component: AttendanceComponent },
-      { path: 'assignments', component: AssignmentComponent },
+      { path: 'subject-management', component: SubjectManagementComponent},
       { path: 'messages', component: MessageComponent },
       { path: 'reports', component: ReportComponent },
+      
     ],
   },
  {
