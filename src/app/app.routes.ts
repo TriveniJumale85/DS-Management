@@ -7,7 +7,6 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
 import { StudentComponent } from './dashboard/admin-dashboard/student/student.component';
 import { AttendanceComponent } from './dashboard/admin-dashboard/attendance/attendance.component';
 import { AttendanceComponent as TeacherAttendanceComponent } from './dashboard/teacher-dashboard/attendance/attendance.component';
-import { AssignmentComponent } from './dashboard/admin-dashboard/assignment/assignment.component';
 import { MessageComponent } from './dashboard/admin-dashboard/message/message.component';
 import { ReportComponent } from './dashboard/admin-dashboard/report/report.component';
 import { StudentDashboardComponent } from './dashboard/student-dashboard/student-dashboard.component';
@@ -19,7 +18,6 @@ import { ProgramsComponent } from './pages/programs/programs.component';
 import { SyllabusComponent } from './pages/syllabus/syllabus.component';
 
 import { AdminHomeComponent } from './dashboard/admin-dashboard/admin-home/admin-home.component';
-import { CoursesComponent } from './dashboard/admin-dashboard/courses/courses.component';
 import { ParentDashboardComponent } from './dashboard/parent-dashboard/parent-dashboard.component';
 import { StudentHomeComponent } from './dashboard/student-dashboard/student-home/student-home.component';
 import { StudentAccessbookComponent } from './dashboard/student-dashboard/student-accessbook/student-accessbook.component';
@@ -35,6 +33,8 @@ import { FeeRemindersComponent } from './dashboard/parent-dashboard/fee-reminder
 import { LearningProgressComponent } from './dashboard/parent-dashboard/learning-progress/learning-progress.component';
 import { SchoolCircularsComponent } from './dashboard/parent-dashboard/school-circulars/school-circulars.component';
 import { ParentHomeComponent } from './dashboard/parent-dashboard/parent-home/parent-home.component';
+import { CourseManagementComponent } from './dashboard/admin-dashboard/course-management/course-management.component';
+import { SubjectManagementComponent } from './dashboard/admin-dashboard/subject-management/subject-management.component';
 import { TeacherDashboardComponent } from './dashboard/teacher-dashboard/teacher-dashboard.component';
 import { AnnouncementsComponent } from './dashboard/teacher-dashboard/announcements/announcements.component';
 import { CheckAssignmentComponent } from './dashboard/teacher-dashboard/check-assignment/check-assignment.component';
@@ -58,12 +58,13 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'main-content', pathMatch: 'full' },
       { path: 'main-content', component: AdminHomeComponent },
-      { path: 'course', component: CoursesComponent },
+      { path: 'course-management', component: CourseManagementComponent },
       { path: 'students', component: StudentComponent },
       { path: 'attendance', component: AttendanceComponent },
-      { path: 'assignments', component: AssignmentComponent },
+      { path: 'subject-management', component: SubjectManagementComponent},
       { path: 'messages', component: MessageComponent },
       { path: 'reports', component: ReportComponent },
+      
     ],
   },
  {
