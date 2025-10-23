@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { StudentComponent } from './dashboard/admin-dashboard/student/student.component';
 import { AttendanceComponent } from './dashboard/admin-dashboard/attendance/attendance.component';
+import { AttendanceComponent as TeacherAttendanceComponent } from './dashboard/teacher-dashboard/attendance/attendance.component';
 import { AssignmentComponent } from './dashboard/admin-dashboard/assignment/assignment.component';
 import { MessageComponent } from './dashboard/admin-dashboard/message/message.component';
 import { ReportComponent } from './dashboard/admin-dashboard/report/report.component';
@@ -34,6 +35,13 @@ import { FeeRemindersComponent } from './dashboard/parent-dashboard/fee-reminder
 import { LearningProgressComponent } from './dashboard/parent-dashboard/learning-progress/learning-progress.component';
 import { SchoolCircularsComponent } from './dashboard/parent-dashboard/school-circulars/school-circulars.component';
 import { ParentHomeComponent } from './dashboard/parent-dashboard/parent-home/parent-home.component';
+import { TeacherDashboardComponent } from './dashboard/teacher-dashboard/teacher-dashboard.component';
+import { AnnouncementsComponent } from './dashboard/teacher-dashboard/announcements/announcements.component';
+import { CheckAssignmentComponent } from './dashboard/teacher-dashboard/check-assignment/check-assignment.component';
+import { CreateAssignmentComponent } from './dashboard/teacher-dashboard/create-assignment/create-assignment.component';
+import { ManageStudentComponent } from './dashboard/teacher-dashboard/manage-student/manage-student.component';
+import { StudentProgressComponent } from './dashboard/teacher-dashboard/student-progress/student-progress.component';
+import { TeacherHomeComponent } from './dashboard/teacher-dashboard/teacher-home/teacher-home.component';
 
 export const routes: Routes = [
   // Home
@@ -83,6 +91,21 @@ export const routes: Routes = [
       { path: 'learning-progress', component: LearningProgressComponent},
       { path: 'school-circulars', component: SchoolCircularsComponent},
      
+    ],
+  },
+
+  {
+    path: 'teacher',
+    component: TeacherDashboardComponent,
+    children: [
+      { path: '', redirectTo: 'main-content-teacher', pathMatch: 'full' },
+      { path: 'main-content-teacher', component: TeacherHomeComponent },
+      { path: 'announcement', component: AnnouncementsComponent},
+      { path: 'attendance', component: TeacherAttendanceComponent },
+      { path: 'check-assignment', component: CheckAssignmentComponent},
+      { path: 'create-assignment', component: CreateAssignmentComponent},
+     { path: 'manage-student', component: ManageStudentComponent},
+     { path: 'student-progress', component: StudentProgressComponent},
     ],
   },
   { path: 'dashboard/teacher', component: OurTeacherComponent },
