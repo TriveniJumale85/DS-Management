@@ -1,8 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-teacher-management',
   standalone: true,
+  imports: [CommonModule,], 
   templateUrl: './teacher-management.component.html',
   styleUrls: ['./teacher-management.component.css']
 })

@@ -4,11 +4,11 @@ import { OurTeacherComponent } from './pages/our-teacher/our-teacher.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
-import { StudentComponent } from './dashboard/admin-dashboard/student/student.component';
-import { AttendanceComponent } from './dashboard/admin-dashboard/attendance/attendance.component';
+
+
 import { AttendanceComponent as TeacherAttendanceComponent } from './dashboard/teacher-dashboard/attendance/attendance.component';
 import { MessageComponent } from './dashboard/admin-dashboard/message/message.component';
-import { ReportComponent } from './dashboard/admin-dashboard/report/report.component';
+
 import { StudentDashboardComponent } from './dashboard/student-dashboard/student-dashboard.component';
 import { ChatboatComponent } from './pages/chatboat/chatboat.component';
 import { FooterComponent } from './pages/footer/footer.component';
@@ -46,6 +46,12 @@ import { TeacherManagementComponent } from './dashboard/admin-dashboard/teacher-
 import { StudentManagementComponent } from './dashboard/admin-dashboard/student-management/student-management.component';
 import { ParentManagementComponent } from './dashboard/admin-dashboard/parent-management/parent-management.component';
 import { TestimonialsComponent } from './pages/home/testimonials/testimonials.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { AcademicComponent } from './pages/academic/academic.component';
+import { AdmissionComponent } from './pages/admission/admission.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 export const routes: Routes = [
   // Home
@@ -63,11 +69,11 @@ export const routes: Routes = [
       { path: '', redirectTo: 'main-content', pathMatch: 'full' },
       { path: 'main-content', component: AdminHomeComponent },
       { path: 'course-management', component: CourseManagementComponent },
-      { path: 'students', component: StudentComponent },
-      { path: 'attendance', component: AttendanceComponent },
+      
+      
       { path: 'subject-management', component: SubjectManagementComponent},
       { path: 'messages', component: MessageComponent },
-      { path: 'reports', component: ReportComponent },
+      
       {path: 'teacher-management',component: TeacherManagementComponent},
       {path:'student-management',component: StudentManagementComponent},
       {path:'parent-management',component:ParentManagementComponent},
@@ -131,6 +137,12 @@ export const routes: Routes = [
   { path: 'programs', component: ProgramsComponent},
   { path: 'syllabus', component: SyllabusComponent},
   {path:'testimonials',component:TestimonialsComponent},
+   {path:'about-us',component:AboutUsComponent},
+    {path:'academic',component:AcademicComponent},
+     {path:'admission',component:AdmissionComponent},
+      {path:'blog',component:BlogComponent},
+ {path:'contact',component:ContactComponent},
+  {path:'courses',component:CoursesComponent},
 
   // Fallback route
   { path: '**', redirectTo: '' },

@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-parent-management',
   standalone: true,
+
   imports: [CommonModule],
+
+
   templateUrl: './parent-management.component.html',
   styleUrls: ['./parent-management.component.css']
 })
