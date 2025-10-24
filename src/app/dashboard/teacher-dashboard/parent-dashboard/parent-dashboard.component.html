@@ -51,75 +51,61 @@
   <div class="list-group list-group-flush rounded-0">
 
     <a
-      routerLink="/admin"
+      routerLink="/parent"
       routerLinkActive="bg-warning text-dark fw-bold active-link"
+      [routerLinkActiveOptions]="{exact: false}"
       class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
     >
       <i class="bi bi-speedometer2 me-2"></i> Dashboard
     </a>
 
     <a
-      routerLink="/admin/teacher-management"
+      routerLink="/parent/learning-progress"
       routerLinkActive="bg-warning text-dark fw-bold active-link"
       class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
     >
-      <i class="bi bi-book me-2"></i> Teacher Management
+      <i class="bi bi-book me-2"></i> Child Learning Progress
     </a>
 
     <a
-      routerLink="/admin/parent-management"
+      routerLink="/parent/attendence"
       routerLinkActive="bg-warning text-dark fw-bold active-link"
       class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
     >
-      <i class="bi bi-people me-2"></i> Parents Management
+      <i class="bi bi-people me-2"></i> Attendance
     </a>
 
     <a
-      routerLink="/admin/student-management"
+      routerLink="/parent/fee-reminders"
       routerLinkActive="bg-warning text-dark fw-bold active-link"
       class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
     >
-      <i class="bi bi-calendar-check me-2"></i> Students Management
+      <i class="bi bi-calendar-check me-2"></i>Fee reminders
     </a>
 
     <a
-      routerLink="/admin/course-management"
+      routerLink="/parent/school-circulars"
       routerLinkActive="bg-warning text-dark fw-bold active-link"
       class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
     >
-      <i class="bi bi-file-earmark-text me-2"></i> Course Management
-    </a>
- <a
-      routerLink="/admin/subject-management"
-      routerLinkActive="bg-warning text-dark fw-bold active-link"
-      class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
-    >
-      <i class="bi bi-file-earmark-text me-2"></i> Subject Management
+      <i class="bi bi-file-earmark-text me-2"></i> school Circulars
     </a>
 
-    <a
-      routerLink="/admin/messages"
+     <!-- <a
+      routerLink="/student/grades"
       routerLinkActive="bg-warning text-dark fw-bold active-link"
       class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
     >
-      <i class="bi bi-chat-dots me-2"></i> 	Push notifications & announcements 
+      <i class="bi bi-chat-dots me-2"></i> Grades
       <span class="badge bg-warning text-dark rounded-pill ms-auto">5</span>
-    </a>
-
-    <a
-      routerLink="/admin/reports"
+    </a> 
+ <a
+      routerLink="/student/assignment"
       routerLinkActive="bg-warning text-dark fw-bold active-link"
       class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
     >
-      <i class="bi bi-graph-up me-2"></i> Exam planner
-    </a>
-<a
-      routerLink="/admin/reports"
-      routerLinkActive="bg-warning text-dark fw-bold active-link"
-      class="list-group-item list-group-item-action border-0 mb-1 py-3 d-flex align-items-center"
-    >
-      <i class="bi bi-graph-up me-2"></i>Content Management
-    </a>
+      <i class="bi bi-graph-up me-2"></i> Submit-Assignment
+    </a> -->
 
   </div>
 </nav>

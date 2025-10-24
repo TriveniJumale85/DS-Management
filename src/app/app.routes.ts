@@ -42,6 +42,9 @@ import { CreateAssignmentComponent } from './dashboard/teacher-dashboard/create-
 import { ManageStudentComponent } from './dashboard/teacher-dashboard/manage-student/manage-student.component';
 import { StudentProgressComponent } from './dashboard/teacher-dashboard/student-progress/student-progress.component';
 import { TeacherHomeComponent } from './dashboard/teacher-dashboard/teacher-home/teacher-home.component';
+import { TeacherManagementComponent } from './dashboard/admin-dashboard/teacher-management/teacher-management.component';
+import { StudentManagementComponent } from './dashboard/admin-dashboard/student-management/student-management.component';
+import { ParentManagementComponent } from './dashboard/admin-dashboard/parent-management/parent-management.component';
 
 export const routes: Routes = [
   // Home
@@ -64,7 +67,9 @@ export const routes: Routes = [
       { path: 'subject-management', component: SubjectManagementComponent},
       { path: 'messages', component: MessageComponent },
       { path: 'reports', component: ReportComponent },
-      
+      {path: 'teacher-management',component: TeacherManagementComponent},
+      {path:'student-management',component: StudentManagementComponent},
+      {path:'parent-management',component:ParentManagementComponent},
     ],
   },
  {
