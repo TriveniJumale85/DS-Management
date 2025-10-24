@@ -45,6 +45,7 @@ import { TeacherHomeComponent } from './dashboard/teacher-dashboard/teacher-home
 import { TeacherManagementComponent } from './dashboard/admin-dashboard/teacher-management/teacher-management.component';
 import { StudentManagementComponent } from './dashboard/admin-dashboard/student-management/student-management.component';
 import { ParentManagementComponent } from './dashboard/admin-dashboard/parent-management/parent-management.component';
+import { TestimonialsComponent } from './pages/home/testimonials/testimonials.component';
 
 export const routes: Routes = [
   // Home
@@ -129,6 +130,7 @@ export const routes: Routes = [
   
   { path: 'programs', component: ProgramsComponent},
   { path: 'syllabus', component: SyllabusComponent},
+  {path:'testimonials',component:TestimonialsComponent},
 
   // Fallback route
   { path: '**', redirectTo: '' },

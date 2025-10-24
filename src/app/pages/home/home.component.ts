@@ -5,11 +5,12 @@ import { FooterComponent } from "../footer/footer.component";
 import { ChatboatComponent } from "../chatboat/chatboat.component";
 import { ProgramsComponent } from "../programs/programs.component";
 import { SyllabusComponent } from "../syllabus/syllabus.component";
+import { TestimonialsComponent } from "./testimonials/testimonials.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, OurTeacherComponent, FooterComponent, ChatboatComponent, ProgramsComponent, SyllabusComponent],
+  imports: [NavbarComponent, OurTeacherComponent, FooterComponent, ChatboatComponent, ProgramsComponent, SyllabusComponent, TestimonialsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
