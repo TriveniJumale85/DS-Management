@@ -52,6 +52,8 @@ import { AdmissionComponent } from './pages/admission/admission.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CoursesComponent } from './pages/courses/courses.component';
+import { TermsConditionComponent } from './pages/terms-condition/terms-condition.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
   // Home
@@ -143,7 +145,8 @@ export const routes: Routes = [
       {path:'blog',component:BlogComponent},
  {path:'contact',component:ContactComponent},
   {path:'courses',component:CoursesComponent},
-
+ {path:'terms-condition',component:TermsConditionComponent},
+  {path:'privacy-policy',component:PrivacyPolicyComponent},
   // Fallback route
   { path: '**', redirectTo: '' },
 ];
