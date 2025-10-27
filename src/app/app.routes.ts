@@ -5,14 +5,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 
-
 import { AttendanceComponent as TeacherAttendanceComponent } from './dashboard/teacher-dashboard/attendance/attendance.component';
 import { MessageComponent } from './dashboard/admin-dashboard/message/message.component';
 
 import { StudentDashboardComponent } from './dashboard/student-dashboard/student-dashboard.component';
 import { ChatboatComponent } from './pages/chatboat/chatboat.component';
 import { FooterComponent } from './pages/footer/footer.component';
-
 
 import { ProgramsComponent } from './pages/programs/programs.component';
 import { SyllabusComponent } from './pages/syllabus/syllabus.component';
@@ -54,6 +52,9 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TermsConditionComponent } from './pages/terms-condition/terms-condition.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { ExamPlannerComponent } from './dashboard/admin-dashboard/exam-planner/exam-planner.component';
+import { ContentManagementComponent } from './dashboard/admin-dashboard/content-management/content-management.component';
+
 
 export const routes: Routes = [
   // Home
@@ -61,8 +62,7 @@ export const routes: Routes = [
 
   // Login
   { path: 'login', component: LoginComponent },
-  { path: 'register', component:RegisterComponent },
-  
+  { path: 'register', component: RegisterComponent },
 
   {
     path: 'admin',
@@ -71,17 +71,18 @@ export const routes: Routes = [
       { path: '', redirectTo: 'main-content', pathMatch: 'full' },
       { path: 'main-content', component: AdminHomeComponent },
       { path: 'course-management', component: CourseManagementComponent },
-      
-      
-      { path: 'subject-management', component: SubjectManagementComponent},
+      { path: 'subject-management', component: SubjectManagementComponent },
       { path: 'messages', component: MessageComponent },
-      
-      {path: 'teacher-management',component: TeacherManagementComponent},
-      {path:'student-management',component: StudentManagementComponent},
-      {path:'parent-management',component:ParentManagementComponent},
+      { path: 'teacher-management', component: TeacherManagementComponent },
+      { path: 'student-management', component: StudentManagementComponent },
+      { path: 'parent-management', component: ParentManagementComponent },
+      { path: 'exam-planner', component: ExamPlannerComponent },
+      { path: 'content-management', component: ContentManagementComponent },
+
+
     ],
   },
- {
+  {
     path: 'student',
     component: StudentDashboardComponent,
     children: [
@@ -89,23 +90,22 @@ export const routes: Routes = [
       { path: 'main-content-student', component: StudentHomeComponent },
       { path: 'accessbook', component: StudentAccessbookComponent },
       { path: 'attendance', component: StudentAttendanceComponent },
-      { path: 'grades', component: StudentGradesComponent},
+      { path: 'grades', component: StudentGradesComponent },
       { path: 'my-course', component: StudentMyCourseComponent },
       { path: 'liveclasses', component: StudentSttendLiveclassesComponent },
       { path: 'assignment', component: StudentSubmitassignmentComponent },
     ],
   },
-{
+  {
     path: 'parent',
     component: ParentDashboardComponent,
     children: [
       { path: '', redirectTo: 'main-content-parent', pathMatch: 'full' },
       { path: 'main-content-parent', component: ParentHomeComponent },
       { path: 'attendence', component: AttendenceComponent },
-      { path: 'fee-reminders', component:FeeRemindersComponent },
-      { path: 'learning-progress', component: LearningProgressComponent},
-      { path: 'school-circulars', component: SchoolCircularsComponent},
-     
+      { path: 'fee-reminders', component: FeeRemindersComponent },
+      { path: 'learning-progress', component: LearningProgressComponent },
+      { path: 'school-circulars', component: SchoolCircularsComponent },
     ],
   },
 
@@ -115,12 +115,12 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'main-content-teacher', pathMatch: 'full' },
       { path: 'main-content-teacher', component: TeacherHomeComponent },
-      { path: 'announcement', component: AnnouncementsComponent},
+      { path: 'announcement', component: AnnouncementsComponent },
       { path: 'attendance', component: TeacherAttendanceComponent },
-      { path: 'check-assignment', component: CheckAssignmentComponent},
-      { path: 'create-assignment', component: CreateAssignmentComponent},
-     { path: 'manage-student', component: ManageStudentComponent},
-     { path: 'student-progress', component: StudentProgressComponent},
+      { path: 'check-assignment', component: CheckAssignmentComponent },
+      { path: 'create-assignment', component: CreateAssignmentComponent },
+      { path: 'manage-student', component: ManageStudentComponent },
+      { path: 'student-progress', component: StudentProgressComponent },
     ],
   },
   { path: 'dashboard/teacher', component: OurTeacherComponent },
@@ -131,10 +131,11 @@ export const routes: Routes = [
   { path: 'home/footer', component: FooterComponent },
   { path: 'home/navbar', component: NavbarComponent },
   { path: 'home/our_teacher', component: OurTeacherComponent },
- 
+
   { path: 'footer', component: FooterComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'our_teacher', component: OurTeacherComponent },
+
   
   { path: 'programs', component: ProgramsComponent},
   { path: 'syllabus', component: SyllabusComponent},
@@ -147,6 +148,17 @@ export const routes: Routes = [
   {path:'courses',component:CoursesComponent},
  {path:'terms-condition',component:TermsConditionComponent},
   {path:'privacy-policy',component:PrivacyPolicyComponent},
+
+  { path: 'programs', component: ProgramsComponent },
+  { path: 'syllabus', component: SyllabusComponent },
+  { path: 'testimonials', component: TestimonialsComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'academic', component: AcademicComponent },
+  { path: 'admission', component: AdmissionComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'courses', component: CoursesComponent },
+
   // Fallback route
   { path: '**', redirectTo: '' },
 ];

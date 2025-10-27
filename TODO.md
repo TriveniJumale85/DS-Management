@@ -1,4 +1,5 @@
-- [x] Edit student-dashboard.component.html to add routerLinkActiveOptions="{exact: false}" to the Dashboard link
-- [x] Remove the incorrect Reports link from the sidebar
-- [x] Add RouterLink and RouterLinkActive imports to the component
-- [ ] Verify the changes by running the app and checking navigation
+- [x] Update content-management.component.html to match teacher-management table UI
+- [x] Update content-management.component.css to teacher-management styles
+- [x] Update exam-planner.component.html to match teacher-management table UI
+- [x] Update exam-planner.component.css to teacher-management styles
+- [ ] Verify changes
