@@ -10,7 +10,7 @@ import { TestimonialsComponent } from "./testimonials/testimonials.component";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, OurTeacherComponent, FooterComponent, ChatboatComponent, ProgramsComponent, SyllabusComponent, TestimonialsComponent],
+  imports: [NavbarComponent, FooterComponent, ChatboatComponent, ProgramsComponent, SyllabusComponent, TestimonialsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
