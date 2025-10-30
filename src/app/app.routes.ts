@@ -54,6 +54,7 @@ import { TermsConditionComponent } from './pages/terms-condition/terms-condition
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { ExamPlannerComponent } from './dashboard/admin-dashboard/exam-planner/exam-planner.component';
 import { ContentManagementComponent } from './dashboard/admin-dashboard/content-management/content-management.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 
 export const routes: Routes = [
@@ -148,6 +149,7 @@ export const routes: Routes = [
   {path:'courses',component:CoursesComponent},
  {path:'terms-condition',component:TermsConditionComponent},
   {path:'privacy-policy',component:PrivacyPolicyComponent},
+  { path: 'gallery', component: GalleryComponent },
 
   { path: 'programs', component: ProgramsComponent },
   { path: 'syllabus', component: SyllabusComponent },

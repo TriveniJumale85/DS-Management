@@ -6,11 +6,12 @@ import { ChatboatComponent } from "../chatboat/chatboat.component";
 import { ProgramsComponent } from "../programs/programs.component";
 import { SyllabusComponent } from "../syllabus/syllabus.component";
 import { TestimonialsComponent } from "./testimonials/testimonials.component";
+import { GalleryComponent } from "../gallery/gallery.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, ChatboatComponent, ProgramsComponent, SyllabusComponent, TestimonialsComponent],
+  imports: [NavbarComponent, FooterComponent, ChatboatComponent, ProgramsComponent, SyllabusComponent, TestimonialsComponent, GalleryComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
