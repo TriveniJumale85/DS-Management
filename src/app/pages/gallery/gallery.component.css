@@ -1,54 +1,37 @@
-.container {
-  max-width: 1200px;
+/* Aesthetic Background for the Gallery Section */
+.gallery-section {
+  background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 50%, #e3f2fd 100%);
+  background-attachment: fixed;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 60px 0;
 }
 
-/* Attractive Heading */
+/* Gallery Title */
 .gallery-title {
-  font-size: 2.5rem;
-  color: #004aad;
+  font-size: 2.2rem;
+  color: #003366;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  display: inline-block;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.gallery-title::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #ffcc00, #004aad);
-  margin: 12px auto 0;
-  border-radius: 2px;
-}
-
-/* Image styling */
+/* Gallery Images */
 .gallery-img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-img:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* Responsive Adjustments */
+/* Responsive Title Size */
 @media (max-width: 768px) {
   .gallery-title {
-    font-size: 1.8rem;
-  }
-
-  .gallery-img {
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .gallery-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
