@@ -48,10 +48,10 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { AcademicComponent } from './pages/academic/academic.component';
 import { AdmissionComponent } from './pages/admission/admission.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { CoursesComponent } from './pages/courses/courses.component';
 import { ExamPlannerComponent } from './dashboard/admin-dashboard/exam-planner/exam-planner.component';
 import { ContentManagementComponent } from './dashboard/admin-dashboard/content-management/content-management.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { StudentPortalComponent } from './pages/student-portal/student-portal.component';
 
 export const routes: Routes = [
   // Home
@@ -141,7 +141,7 @@ export const routes: Routes = [
   { path: 'admission', component: AdmissionComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'contact-us', component: ContactUsComponent},
-  { path: 'courses', component: CoursesComponent },
+  { path: 'student-portal', component: StudentPortalComponent},
 
   // Fallback route
   { path: '**', redirectTo: '' },

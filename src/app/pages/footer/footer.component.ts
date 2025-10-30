@@ -1,5 +1,6 @@
 import { Component } from "@angular/core"
 import { CommonModule } from "@angular/common"
+import { RouterModule } from "@angular/router"
 
 interface FooterLink {
   label: string
@@ -15,7 +16,7 @@ interface SocialIcon {
 @Component({
   selector: "app-footer",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: "./footer.component.html",
   styleUrls: ["./footer.component.css"],
 })
