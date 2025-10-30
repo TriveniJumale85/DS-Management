@@ -48,7 +48,6 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { AcademicComponent } from './pages/academic/academic.component';
 import { AdmissionComponent } from './pages/admission/admission.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { ContactComponent } from './pages/contact/contact.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { TermsConditionComponent } from './pages/terms-condition/terms-condition.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
@@ -56,6 +55,7 @@ import { ExamPlannerComponent } from './dashboard/admin-dashboard/exam-planner/e
 import { ContentManagementComponent } from './dashboard/admin-dashboard/content-management/content-management.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 export const routes: Routes = [
   // Home
@@ -145,7 +145,7 @@ export const routes: Routes = [
     {path:'academic',component:AcademicComponent},
      {path:'admission',component:AdmissionComponent},
       {path:'blog',component:BlogComponent},
- {path:'contact',component:ContactComponent},
+ 
   {path:'courses',component:CoursesComponent},
  {path:'terms-condition',component:TermsConditionComponent},
   {path:'privacy-policy',component:PrivacyPolicyComponent},
@@ -158,7 +158,7 @@ export const routes: Routes = [
   { path: 'academic', component: AcademicComponent },
   { path: 'admission', component: AdmissionComponent },
   { path: 'blog', component: BlogComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'contact-us', component: ContactUsComponent},
   { path: 'courses', component: CoursesComponent },
 
   // Fallback route
