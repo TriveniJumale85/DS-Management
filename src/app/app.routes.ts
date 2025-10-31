@@ -59,6 +59,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { StudentPortalComponent } from './pages/student-portal/student-portal.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 export const routes: Routes = [
   // Home
@@ -148,6 +149,7 @@ export const routes: Routes = [
     {path:'academic',component:AcademicComponent},
      {path:'admission',component:AdmissionComponent},
       {path:'blog',component:BlogComponent},
+      {path:'courses',component:CoursesComponent},
  
   // {path:'courses',component:CoursesComponent},
  {path:'terms-condition',component:TermsConditionComponent},
