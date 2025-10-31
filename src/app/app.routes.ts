@@ -59,7 +59,13 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { StudentPortalComponent } from './pages/student-portal/student-portal.component';
+
 import { CoursesComponent } from './pages/courses/courses.component';
+
+import { HistoryComponent } from './pages/history/history.component';
+import { CampusTourComponent } from './pages/campus-tour/campus-tour.component';
+import { ScholarshipComponent } from './pages/scholarship/scholarship.component';
+
 
 export const routes: Routes = [
   // Home
@@ -165,7 +171,9 @@ export const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'student-portal', component: StudentPortalComponent},
-
+ { path: 'history', component: HistoryComponent},
+  { path: 'scholarship', component: ScholarshipComponent},
+   { path: 'campus-tour', component: CampusTourComponent},
   // Fallback route
   { path: '**', redirectTo: '' },
 ];

@@ -1,0 +1,44 @@
+.about-section {
+  background: url('https://images.unsplash.com/photo-1603988363607-e1e4a66962c3?auto=format&fit=crop&w=1400&q=80')
+    no-repeat center center/cover;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  inset: 0;
+}
+
+h1 span {
+  color: #ffc107;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+img {
+  border: 3px solid #ffc107;
+  transition: transform 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Animation effects */
+.animate__animated {
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+}
