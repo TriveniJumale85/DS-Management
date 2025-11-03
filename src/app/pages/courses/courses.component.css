@@ -3,6 +3,10 @@
   transition: all 0.4s ease-in-out;
   background: #fff;
 }
+.container {
+  margin-top: 100px; /* navbar खाली जागा देतो */
+}
+
 .course-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);

@@ -65,6 +65,7 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { CampusTourComponent } from './pages/campus-tour/campus-tour.component';
 import { ScholarshipComponent } from './pages/scholarship/scholarship.component';
+import { NavbarGalleryComponent } from './pages/navbar-gallery/navbar-gallery.component';
 
 
 export const routes: Routes = [
@@ -174,6 +175,8 @@ export const routes: Routes = [
  { path: 'history', component: HistoryComponent},
   { path: 'scholarship', component: ScholarshipComponent},
    { path: 'campus-tour', component: CampusTourComponent},
+   { path: 'Gallery', component: NavbarGalleryComponent},
   // Fallback route
+
   { path: '**', redirectTo: '' },
 ];

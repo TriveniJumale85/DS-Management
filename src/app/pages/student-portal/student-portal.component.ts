@@ -1,9 +1,11 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-student-portal',
   templateUrl: './student-portal.component.html',
-  styleUrls: ['./student-portal.component.css']
+  styleUrls: ['./student-portal.component.css'],
+  
 })
 export class StudentPortalComponent implements OnInit {
   private counted = false;

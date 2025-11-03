@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as AOS from 'aos';
+import { NavbarComponent } from "../navbar/navbar.component";
+import { FooterComponent } from "../footer/footer.component";
 @Component({
   selector: 'app-courses',
   standalone: true,
   imports: [CommonModule,
-      FormsModule
-  ],
+    FormsModule, NavbarComponent, FooterComponent],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })

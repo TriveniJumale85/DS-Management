@@ -1,6 +1,6 @@
 /* Banner Styles */
 .banner-img {
-  max-height: 400px;
+  max-height: 550px;
   object-fit: cover;
   filter: brightness(70%);
 }

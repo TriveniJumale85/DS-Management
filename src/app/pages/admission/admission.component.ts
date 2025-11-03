@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { NavbarComponent } from "../navbar/navbar.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-admission',
   standalone: true,
   templateUrl: './admission.component.html',
   styleUrls: ['./admission.component.css'],
-  imports: [ReactiveFormsModule, NgIf]
+  imports: [ReactiveFormsModule, NgIf, NavbarComponent, FooterComponent]
 })
 export class AdmissionComponent {
 fileError: any;
