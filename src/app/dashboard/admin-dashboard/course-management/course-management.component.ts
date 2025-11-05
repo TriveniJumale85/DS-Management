@@ -19,33 +19,32 @@ interface Course {
   styleUrls: ['./course-management.component.css']
 })
 export class CourseManagementComponent {
-  // Course List
-  courses: Course[] = [
-    { id: 1, name: 'Mathematics', category: 'Academic', duration: '6 Months', students: 120, progress: 85 },
-    { id: 2, name: 'Science', category: 'Academic', duration: '5 Months', students: 98, progress: 70 },
-    { id: 3, name: 'Sports Training', category: 'Sports', duration: '3 Months', students: 76, progress: 50 }
-  ];
 
-  // New or Editing Course
+  // ✅ Load courses from localStorage OR use default data
+  courses: Course[] = JSON.parse(localStorage.getItem('courses') || '[]').length
+    ? JSON.parse(localStorage.getItem('courses') || '[]')
+    : [
+        { id: 1, name: 'Mathematics', category: 'Academic', duration: '6 Months', students: 120, progress: 85 },
+        { id: 2, name: 'Science', category: 'Academic', duration: '5 Months', students: 98, progress: 70 },
+        { id: 3, name: 'Sports Training', category: 'Sports', duration: '3 Months', students: 76, progress: 50 }
+      ];
+
   newCourse: Course = { name: '', category: '', duration: '', students: 0, progress: 0 };
-
-  // Control modal state
   showCourseModal = false;
-
-  // Edit mode flag
   isEditMode = false;
-
-  // Selected index for edit
   selectedIndex: number | null = null;
 
-  // ✅ Open modal for adding a new course
+  // ✅ Update LocalStorage
+  saveToLocal() {
+    localStorage.setItem('courses', JSON.stringify(this.courses));
+  }
+
   openAddCourseModal() {
     this.isEditMode = false;
     this.resetForm();
     this.showCourseModal = true;
   }
 
-  // ✅ Open modal for editing an existing course
   openEditCourseModal(course: Course, index: number) {
     this.isEditMode = true;
     this.selectedIndex = index;
@@ -53,36 +52,45 @@ export class CourseManagementComponent {
     this.showCourseModal = true;
   }
 
-  // ✅ Close modal
   closeCourseModal() {
     this.showCourseModal = false;
     this.resetForm();
   }
 
-  // ✅ Add or Update Course
   saveCourse() {
-    if (this.newCourse.name.trim() === '') return;
+    if (
+      !this.newCourse.name ||
+      !this.newCourse.category ||
+      !this.newCourse.duration ||
+      this.newCourse.students <= 0 ||
+      this.newCourse.progress < 0 ||
+      this.newCourse.progress > 100
+    ) {
+      alert("Please fill all fields correctly!");
+      return;
+    }
 
     if (this.isEditMode && this.selectedIndex !== null) {
-      // Update course
       this.courses[this.selectedIndex] = { ...this.newCourse };
     } else {
-      // Add new course
       this.newCourse.id = this.courses.length + 1;
       this.courses.push({ ...this.newCourse });
     }
 
+    // ✅ Save to localStorage after add/update
+    this.saveToLocal();
     this.closeCourseModal();
   }
 
-  // ✅ Delete Course
   deleteCourse(index: number) {
     if (confirm('Are you sure you want to delete this course?')) {
       this.courses.splice(index, 1);
+
+      // ✅ Save to localStorage after delete
+      this.saveToLocal();
     }
   }
 
-  // ✅ Reset form
   resetForm() {
     this.newCourse = { name: '', category: '', duration: '', students: 0, progress: 0 };
     this.selectedIndex = null;
