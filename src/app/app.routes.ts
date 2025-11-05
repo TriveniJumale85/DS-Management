@@ -66,6 +66,8 @@ import { HistoryComponent } from './pages/history/history.component';
 import { CampusTourComponent } from './pages/campus-tour/campus-tour.component';
 import { ScholarshipComponent } from './pages/scholarship/scholarship.component';
 import { NavbarGalleryComponent } from './pages/navbar-gallery/navbar-gallery.component';
+import { TimetableComponent } from './dashboard/teacher-dashboard/timetable/timetable.component';
+import { StudentTimetableComponent } from './dashboard/student-dashboard/student-timetable/student-timetable.component';
 
 
 export const routes: Routes = [
@@ -106,6 +108,7 @@ export const routes: Routes = [
       { path: 'my-course', component: StudentMyCourseComponent },
       { path: 'liveclasses', component: StudentSttendLiveclassesComponent },
       { path: 'assignment', component: StudentSubmitassignmentComponent },
+      { path: 'timetable', component: StudentTimetableComponent},
     ],
   },
   {
@@ -133,6 +136,7 @@ export const routes: Routes = [
       { path: 'create-assignment', component: CreateAssignmentComponent },
       { path: 'manage-student', component: ManageStudentComponent },
       { path: 'student-progress', component: StudentProgressComponent },
+      { path: 'timetable', component: TimetableComponent},
     ],
   },
   { path: 'dashboard/teacher', component: OurTeacherComponent },

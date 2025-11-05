@@ -68,3 +68,12 @@
     font-size: 1.6rem;
   }
 }
+.syllabus-bg {
+  background-image: url('/assets/syllabus bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  padding: 60px 20px;   
+  border-radius: 20px; 
+}

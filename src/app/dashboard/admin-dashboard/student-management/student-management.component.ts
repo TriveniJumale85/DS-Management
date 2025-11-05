@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-student-management',
@@ -9,15 +9,34 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './student-management.component.html',
   styleUrls: ['./student-management.component.css']
 })
-export class StudentManagementComponent {
-  students: any[] = [
-    { id: 1, name: 'Aarav Mehta', course: 'B.Tech', email: 'aarav@gmail.com', contact: '9876543210', enrollmentDate: '2024-06-15', status: 'Active' },
-  ];
+export class StudentManagementComponent implements OnInit {
+
+  students: any[] = [];
 
   showForm = false;
   isEdit = false;
   message = '';
-  studentData: any = { id: '', name: '', course: '', email: '', contact: '', enrollmentDate: '', status: 'Active' };
+
+  studentData: any = { 
+    id: '', 
+    name: '', 
+    course: '', 
+    email: '', 
+    contact: '', 
+    enrollmentDate: '', 
+    status: 'Active' 
+  };
+
+  ngOnInit() {
+    const stored = localStorage.getItem('students');
+    if (stored) {
+      this.students = JSON.parse(stored);
+    }
+  }
+
+  saveToLocalStorage() {
+    localStorage.setItem('students', JSON.stringify(this.students));
+  }
 
   toggleForm() {
     this.showForm = !this.showForm;
@@ -26,26 +45,33 @@ export class StudentManagementComponent {
     this.studentData = { id: '', name: '', course: '', email: '', contact: '', enrollmentDate: '', status: 'Active' };
   }
 
-  saveStudent() {
-  // Mobile number validation
-  const mobileRegex = /^[0-9]{10}$/;
-  if (!mobileRegex.test(this.studentData.contact)) {
-    this.message = 'Please enter a valid 10-digit mobile number!';
-    return;
-  }
+  saveStudent(form: NgForm) {
+    if (!form.valid) {
+      this.message = "Please fill all fields correctly!";
+      return;
+    }
 
-  if (this.isEdit) {
-    const index = this.students.findIndex(s => s.id === this.studentData.id);
-    if (index !== -1) this.students[index] = { ...this.studentData };
-    this.message = 'Student details updated successfully!';
-  } else {
-    this.studentData.id = this.students.length + 1;
-    this.students.push({ ...this.studentData });
-    this.message = 'Student added successfully!';
-  }
-  this.toggleForm();
-}
+    // Mobile validation
+    const mobileRegex = /^[0-9]{10}$/;
+    if (!mobileRegex.test(this.studentData.contact)) {
+      this.message = 'Enter a valid 10-digit mobile number!';
+      return;
+    }
 
+    if (this.isEdit) {
+      const index = this.students.findIndex(s => s.id === this.studentData.id);
+      if (index !== -1) this.students[index] = { ...this.studentData };
+
+      this.message = 'Student updated successfully!';
+    } else {
+      this.studentData.id = Date.now(); // unique ID
+      this.students.push({ ...this.studentData });
+      this.message = 'Student added successfully!';
+    }
+
+    this.saveToLocalStorage();
+    this.toggleForm();
+  }
 
   editStudent(student: any) {
     this.studentData = { ...student };
@@ -54,11 +80,12 @@ export class StudentManagementComponent {
   }
 
   deleteStudent(id: number) {
-    const confirmDelete = confirm('Are you sure you want to delete this student?');
+    const confirmDelete = confirm('Are you sure to delete this student?');
     if (confirmDelete) {
       this.students = this.students.filter(s => s.id !== id);
+      this.saveToLocalStorage();
       this.message = 'Student deleted successfully!';
     }
   }
-  
+
 }
