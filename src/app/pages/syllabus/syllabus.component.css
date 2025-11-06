@@ -73,7 +73,25 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  padding: 60px 20px;   
-  border-radius: 20px; 
+
+  padding: 60px 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Light overlay to brighten image */
+.syllabus-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.60); /* MORE LIGHTNESS */
+  border-radius: inherit;
+  z-index: 0;
+}
+
+/* Content always above overlay */
+.syllabus-bg > * {
+  position: relative;
+  z-index: 1;
 }

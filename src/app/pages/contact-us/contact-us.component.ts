@@ -17,9 +17,11 @@ export class ContactUsComponent {
     email: '',
     message: ''
   };
+showSuccess: any;
 
   onSubmit() {
-    alert('Thank you for reaching out, ' + this.contact.name + '! We will get back to you soon.');
+    alert(`Thank you for reaching out, ${this.contact.name}! We will get back to you soon.`);
+
     this.contact = { name: '', email: '', message: '' };
   }
 }
