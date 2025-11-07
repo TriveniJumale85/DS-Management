@@ -28,16 +28,33 @@
 
     <!-- Menu -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto text-center">
-        <li class="nav-item"><a class="nav-link active" routerLink="/home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/courses">Courses</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/academic">Academics</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/Gallery">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/about-us">About us</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/admission">Admissions</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/blog">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/contact-us">Contact</a></li>
-      </ul>
+     <ul class="navbar-nav mx-auto text-center">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/courses" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Courses</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/academic" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Academics</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/Gallery" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Gallery</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/about-us" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">About Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/admission" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Admissions</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/blog" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Blog</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/contact-us" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
+  </li>
+</ul>
+
 
       <div class="d-flex align-items-center">
         <a routerLink="/login" class="btn btn-warning rounded-pill fw-bold px-4">
