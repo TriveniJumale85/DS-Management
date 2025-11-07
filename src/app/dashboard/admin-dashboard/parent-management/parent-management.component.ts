@@ -27,11 +27,23 @@ studentData: any;
     this.parentData = { id: '', name: '', childName: '', contact: '', email: '', address: '', relation: '' };
   }
 
-  saveParent() {
-  // Mobile number validation
+ saveParent() {
   const mobileRegex = /^[0-9]{10}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!this.parentData.name || !this.parentData.childName || !this.parentData.contact ||
+      !this.parentData.email || !this.parentData.address || !this.parentData.relation) {
+    this.message = 'Please fill all the fields!';
+    return;
+  }
+
   if (!mobileRegex.test(this.parentData.contact)) {
     this.message = 'Please enter a valid 10-digit mobile number!';
+    return;
+  }
+
+  if (!emailRegex.test(this.parentData.email)) {
+    this.message = 'Please enter a valid email!';
     return;
   }
 
@@ -46,6 +58,8 @@ studentData: any;
   }
   this.toggleForm();
 }
+
+
 
   editParent(parent: any) {
     this.parentData = { ...parent };
