@@ -1,11 +1,15 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { NavbarComponent } from "../navbar/navbar.component";
+import { FooterComponent } from "../footer/footer.component";
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-student-portal',
+  standalone: true,
+  imports: [CommonModule, NavbarComponent, FooterComponent],
   templateUrl: './student-portal.component.html',
-  styleUrls: ['./student-portal.component.css'],
-  
+  styleUrls: ['./student-portal.component.css']
 })
 export class StudentPortalComponent implements OnInit {
   private counted = false;
