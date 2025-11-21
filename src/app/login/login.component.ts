@@ -1,7 +1,9 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdminService } from './admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +12,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   passwordVisible: boolean = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private adminService: AdminService, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -28,11 +29,21 @@ export class LoginComponent implements OnInit {
     this.passwordVisible = !this.passwordVisible;
   }
 
-
   onSubmit(): void {
     if (this.loginForm.valid) {
-      console.log('Form submitted:', this.loginForm.value);
-      // Add your login logic here
+      const payload = this.loginForm.value;
+      console.log('Submitting login payload:', payload);
+
+      this.adminService.login(payload).subscribe({
+        next: (res) => {
+          console.log('Login successful:', res);
+          this.router.navigate(['/admin']);
+
+        },
+        error: (err) => {
+          console.error('Login failed:', err);
+        }
+      });
     } else {
       console.log('Form is invalid');
       this.markFormGroupTouched(this.loginForm);
@@ -54,5 +65,3 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 }
-
-
