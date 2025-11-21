@@ -68,6 +68,7 @@ import { ScholarshipComponent } from './pages/scholarship/scholarship.component'
 import { NavbarGalleryComponent } from './pages/navbar-gallery/navbar-gallery.component';
 import { TimetableComponent } from './dashboard/teacher-dashboard/timetable/timetable.component';
 import { StudentTimetableComponent } from './dashboard/student-dashboard/student-timetable/student-timetable.component';
+import { ParentsTimetableComponent } from './dashboard/parent-dashboard/parents-timetable/parents-timetable.component';
 
 
 export const routes: Routes = [
@@ -121,6 +122,7 @@ export const routes: Routes = [
       { path: 'fee-reminders', component: FeeRemindersComponent },
       { path: 'learning-progress', component: LearningProgressComponent },
       { path: 'school-circulars', component: SchoolCircularsComponent },
+      { path: 'timetable', component: ParentsTimetableComponent},
     ],
   },
 

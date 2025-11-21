@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./student-timetable.component.css']
 })
 export class StudentTimetableComponent {
+  @Input() showJoinButton: boolean = true;   // <--- added
 
   timetable: any[] = [];
 

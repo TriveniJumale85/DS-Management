@@ -27,15 +27,16 @@
             <td>{{ t.startTime }} - {{ t.endTime }}</td>
 
             <td>
-              <a *ngIf="t.meetingLink"
-                 class="btn btn-primary btn-sm px-3"
-                 target="_blank"
-                 [href]="t.meetingLink">
-                Join
-              </a>
+  <a *ngIf="showJoinButton && t.meetingLink"
+     class="btn btn-primary btn-sm px-3"
+     target="_blank"
+     [href]="t.meetingLink">
+    Join
+  </a>
 
-              <span *ngIf="!t.meetingLink">-</span>
-            </td>
+  <span *ngIf="!showJoinButton">-</span>
+</td>
+
           </tr>
         </tbody>
 
